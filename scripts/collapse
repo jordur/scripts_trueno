@@ -1,0 +1,1 @@
+fastx_collapser -i /home/ibv/jdurban/TRANSCRIPTOMES/results/GZX-10_prinseq_good.fastq -o /home/ibv/jdurban/TRANSCRIPTOMES/results/collapsed/GZX_10_collapsed.fastq -v

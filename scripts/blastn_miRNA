@@ -1,0 +1,15 @@
+#!/bin/bash
+#SBATCH --job-name="BmiRNA"
+#SBATCH --mem=20G
+
+for i in 21 22; do 
+cp /home/ibv/jdurban/miRNA/miRNA${i}/150730_SND104_A_L006_GZX-${i}.clusters /home/ibv/jdurban/miRNA/miRNA${i}/noms_clusters $SLURMTMP
+cd $SLURMTMP
+
+formatdb -i 150730_SND104_A_L006_GZX-${i}.clusters -t ${i}_clusters -p F -n ${i}_clusters -o T
+fastacmd -d ${i}_clusters -i noms_clusters -p F -o ${i}_clusters.fasta
+
+blastall -p blastn -d /home/ibv/jdurban/db/miRNA -e 0.001 -m 7 -i ${i}_clusters.fasta -v 20 -b 20 -a 2 -o /home/ibv/jdurban/miRNA/miRNA${i}/blastresults/blast_${i}.xml
+mv * $SLURM_SUBMIT_DIR;
+done
+exit

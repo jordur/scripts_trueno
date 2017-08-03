@@ -1,0 +1,2 @@
+prinseq-lite.pl -fastq /home/ibv/jdurban/TRANSCRIPTOMES/results/GZX-9_prinseq_good.fastq  -out_format 3 -graph_data  /home/ibv/jdurban/TRANSCRIPTOMES/stats/trimmed/stats9_processat.gd
+

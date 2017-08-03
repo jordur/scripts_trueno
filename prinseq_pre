@@ -1,0 +1,14 @@
+
+prinseq-lite.pl -fastq /home/ibv/jdurban/TRANSCRIPTOMES/results/131212_SND393_A_L005_GZX-10_R1_trimmed.fq -min_len 50 -max_len 150 -trim_tail_left 10 -trim_tail_right 10 -out_format 3 -out_good /home/ibv/jdurban/TRANSCRIPTOMES/results/GZX-10_prinseq_good -out_bad /home/ibv/jdurban/TRANSCRIPTOMES/results/GZX-10_prinseq_bad -qual_noscale -logfile /home/ibv/jdurban/TRANSCRIPTOMES/results/logs/prinseq_pre_10
+ 
+prinseq-lite.pl -fastq /home/ibv/jdurban/TRANSCRIPTOMES/results/131212_SND393_A_L005_GZX-9_R1_trimmed.fq -min_len 50 -max_len 150 -trim_tail_left 10 -trim_tail_right 10 -out_format 3 -out_good /home/ibv/jdurban/TRANSCRIPTOMES/results/GZX-9_prinseq_good -out_bad /home/ibv/jdurban/TRANSCRIPTOMES/results/GZX-9_prinseq_bad -qual_noscale -logfile /home/ibv/jdurban/TRANSCRIPTOMES/results/logs/prinseq_pre_9
+
+prinseq-lite.pl -fastq /home/ibv/jdurban/TRANSCRIPTOMES/results/131212_SND393_A_L005_GZX-8_R1_trimmed.fq -min_len 50 -max_len 150 -trim_tail_left 10 -trim_tail_right 10 -out_format 3 -out_good /home/ibv/jdurban/TRANSCRIPTOMES/results/GZX-8_prinseq_good -out_bad /home/ibv/jdurban/TRANSCRIPTOMES/results/GZX-8_prinseq_bad -qual_noscale -logfile /home/ibv/jdurban/TRANSCRIPTOMES/results/logs/prinseq_pre_8
+
+prinseq-lite.pl -fastq /home/ibv/jdurban/TRANSCRIPTOMES/results/131212_SND393_A_L005_GZX-7_R1_trimmed.fq -min_len 50 -max_len 150 -trim_tail_left 10 -trim_tail_right 10 -out_format 3 -out_good /home/ibv/jdurban/TRANSCRIPTOMES/results/GZX-7_prinseq_good -out_bad /home/ibv/jdurban/TRANSCRIPTOMES/results/GZX-7_prinseq_bad -qual_noscale -logfile /home/ibv/jdurban/TRANSCRIPTOMES/results/logs/prinseq_pre_7
+
+prinseq-lite.pl -fastq /home/ibv/jdurban/TRANSCRIPTOMES/results/131212_SND393_A_L005_GZX-6_R1_trimmed.fq -min_len 50 -max_len 150 -trim_tail_left 10 -trim_tail_right 10 -out_format 3 -out_good /home/ibv/jdurban/TRANSCRIPTOMES/results/GZX-6_prinseq_good -out_bad /home/ibv/jdurban/TRANSCRIPTOMES/results/GZX-6_prinseq_bad -qual_noscale -logfile /home/ibv/jdurban/TRANSCRIPTOMES/results/logs/prinseq_pre_6
+
+prinseq-lite.pl -fastq /home/ibv/jdurban/TRANSCRIPTOMES/results/131212_SND393_A_L005_GZX-5_R1_trimmed.fq -min_len 50 -max_len 150 -trim_tail_left 10 -trim_tail_right 10 -out_format 3 -out_good /home/ibv/jdurban/TRANSCRIPTOMES/results/GZX-5_prinseq_good -out_bad /home/ibv/jdurban/TRANSCRIPTOMES/results/GZX-5_prinseq_bad -qual_noscale -logfile /home/ibv/jdurban/TRANSCRIPTOMES/results/logs/prinseq_pre_5
+
+

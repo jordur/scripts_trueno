@@ -1,0 +1,110 @@
+#! /bin/bash
+#####################################################
+# Script para lanzar los siguientes trabajos:
+#	- nanopolish_extract.sh
+#	- canu.sh
+#	- bwa_nanopore.sh
+#	- nanopolish_consensus.sh
+#####################################################
+echo 'Description: Assembly of MinION nanopore reads'
+echo $(date) 
+
+# ----------------------- #
+# -- Functions ---------- #
+# ----------------------- #
+
+## NANOPOLISH EXTRACT ##
+Nanopolish_extract()
+{
+jid1=$(sbatch  -p q-low -n 1 ~/scripts/nanopolish_extract.sh)
+echo $jid1 > /home/ibv/jdurban/MinION/$sample/job.txt
+job=`awk '{print $NF}' /home/ibv/jdurban/MinION/$sample/job.txt`
+}
+
+## CANU ##
+Canu_assembly()
+{
+jid2=$(sbatch  -p q-low --dependency=afterany:$job --mem=64G  ~/scripts/canu.sh)
+echo $jid2 > /home/ibv/jdurban/MinION/$sample/job2.txt
+job2=`awk '{print $NF}' /home/ibv/jdurban/MinION/$sample/job2.txt`
+}
+
+## BWA ##
+BWA()
+{
+jid3=$(sbatch -p q-low -n 1 ~/scripts/bwa_nanopore.sh)
+echo $jid3 > /home/ibv/jdurban/MinION/$sample/job3.txt
+job3=`awk '{print $NF}' /home/ibv/jdurban/MinION/$sample/job3.txt`
+}
+
+## Nanopolish consensus ##
+nanopolish_consensus()
+{
+jid4=$(sbatch -p q-low --dependency=afterany:$job3 ~/scripts/nanopolish_consensus.sh)
+echo $jid4 > /home/ibv/jdurban/MinION/$sample/job4.txt
+job4=`awk '{print $NF}' /home/ibv/jdurban/MinION/$sample/job4.txt`
+}
+
+## Assembly stats ##
+stats_nanopore()
+{
+jid5=$(sbatch -p q-low --dependency=afterany:$job4 ~/scripts/stats_nanopore.sh)
+echo $jid5 > /home/ibv/jdurban/MinION/$sample/job5.txt
+job5=`awk '{print $NF}' /home/ibv/jdurban/MinION/$sample/job5.txt`
+}
+
+## Usage ##
+usage(){
+    echo 'ERROR : Check input parameters'
+    echo 'Name: canu_analysis.sh'
+    echo 'Usage: sh canu_analysis.sh SAMPLE_NAME GENOME_SIZE(k kilobp, m megabp, g gigabp) CLASS(small/large)'
+    echo 'Example: sh canu_analysis.sh -s Ecoli -g 4.8m -c small'
+    echo '         sh canu_analysis.sh Ecoli 4.8m'
+    echo '
+                - Provide fast5 files with the following structure:
+                        SAMPLE/
+                          └── fast5
+                                ├── fail
+                                ├── pass
+                                └── skip        
+                - Reference should be named as SAMPLE_DEF.fasta
+        '
+
+    exit $E_BADARGS
+}
+
+# ----------------------------------------------------
+# ------- Canu Nanopore Assembly Pipeline --------------------
+# -----------------------------------------------------
+while getopts "s:g:c:" opt
+do	
+	case $opt in 
+		s)sample="$OPTARG";;
+		g)genome="$OPTARG";;
+		c)class="$OPTARG";;
+	esac
+done
+export sample
+export genome
+export class
+E_BADARGS=65    # Error code in case of bad arguments  
+
+# -----------------------------
+# -- Name, version and usage --
+# -----------------------------
+scriptname=`basename $0`
+args=($@)
+
+#if [ ${#} -ne 3 ]; then
+#        usage $scriptname
+#        exit $E_BADARGS
+#fi
+
+# -----------------------------------------
+# ------------ main body ------------------
+# -----------------------------------------
+#Nanopolish_extract ${@}
+#Canu_assembly ${@}
+#BWA ${@}
+#nanopolish_consensus ${@}
+#stats_nanopore ${@}

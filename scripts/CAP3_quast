@@ -1,0 +1,1 @@
+quast.py --min-contig 1 -T 2 -l CAP3_assembly_stats_ /home/ibv/jdurban/ANTIC/oases-transcripts.fa.cap.contigs -o /home/ibv/jdurban/ANTIC/stats

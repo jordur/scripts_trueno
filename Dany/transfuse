@@ -1,0 +1,9 @@
+#!/bin/bash
+#SBATCH --job-name="transfuse"
+#SBATCH --mem=50G
+cp /home/ibv/jdurban/Dany/Oases/results/good.59_transcripts.fa /home/ibv/jdurban/Dany/Oases/results/good.67_transcripts.fa /home/ibv/jdurban/Dany/Trinity/good.Trinity.Trinity.fasta /home/ibv/jdurban/Dany/Ca_1_1-paired_prinseq_good_FgEd.fastq_pairs_R1.fastq /home/ibv/jdurban/Dany/Ca_1_2-paired_prinseq_good_fkAE.fastq_pairs_R2.fastq $TMPDIR
+cd $TMPDIR
+
+transfuse --assemblies good.59_transcripts.fa,good.67_transcripts.fa,good.Trinity.Trinity.fasta --left Ca_1_1-paired_prinseq_good_FgEd.fastq_pairs_R1.fastq --right Ca_1_2-paired_prinseq_good_fkAE.fastq_pairs_R2.fastq --output  /home/ibv/jdurban/Dany/transfuse/transfuse_Dany --threads 6 --verbose
+mv * $SLURM_SUBMIT_DIR
+exit

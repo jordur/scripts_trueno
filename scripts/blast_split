@@ -1,0 +1,14 @@
+#!/bin/sh 
+### Script per llançar blastx usant SLURM_ARRAY ###
+#SBATCH --job-name="Blast_split"
+#SBATCH --mem="15G"
+export tmpblast=/scratch-global/$SLURM_JOB_USER
+cp /home/ibv/jdurban/MinION/Bjararaca/fasta/Bjararaca_*.fasta $tmpblast
+cd $tmpblast
+
+blastn -task blastn -db /home/ibv/jdurban/db/nt/nt -evalue 0.001 -outfmt 5 -query Bjararaca_${SLURM_ARRAY_TASK_ID}.fasta -show_gis -max_target_seqs 1 -max_hsps 1 -num_threads 4 -out Bjararaca_blast_results_${SLURM_ARRAY_TASK_ID}
+
+cp Bjararaca_blast_results* /home/ibv/jdurban/MinION/Bjararaca/blast
+exit
+#sbatch -p Q-low -n 6 --mem=15G --array=0-24 --job-name=blastX17 ~/scripts/blastX17
+#qsub -N blastX18 -q Q-med -t 0-24 -l nodes=5 ~/scripts/blastx

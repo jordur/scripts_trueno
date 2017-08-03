@@ -1,0 +1,11 @@
+#!/bin/sh 
+#SBATCH --job-name="blastX_Tv"
+#SBATCH --mem=40G
+cp /home/ibv/jdurban/Dany/Tv_1/CAP3/contigs_Tv* $SLURMTMP
+cd $SLURMTMP
+### Script per llançar blastx usant SLURM_ARRAY ###
+blastx -task blastx -db /home/ibv/jdurban/db/uniref100_metazoaDB -evalue 0.001 -outfmt 5 -query contigs_Tv_$SLURM_ARRAY_TASK_ID -show_gis -max_target_seqs 1 -max_hsps 1 -num_threads 2 -out /home/ibv/jdurban/Dany/Tv_1/CAP3/blastresults/blastX_contigs_$SLURM_ARRAY_TASK_ID
+mv * $SLURM_SUBMIT_DIR
+exit
+#sbatch -p Q-low -n 6 --mem=15G --array=0-24 --job-name=blastX17 ~/scripts/blastX17
+#qsub -N blastX18 -q Q-med -t 0-24 -l nodes=5 ~/scripts/blastx

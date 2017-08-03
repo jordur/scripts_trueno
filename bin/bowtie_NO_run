@@ -1,0 +1,23 @@
+for i in `ls /home/ibv/jdurban/TRANSCRIPTOMES/results/assembly/Trinty_DIAG_5/mapping/index/*.fasta`; do
+
+echo "$i" | awk -F "/" '{print $NF}' var="$i" | awk -F "." '{print$1}' > file
+name=`cat file`	
+echo "$name"
+index="/home/ibv/jdurban/TRANSCRIPTOMES/results/assembly/Trinty_DIAG_5/mapping/index/${name}.idx"
+
+#echo "bowtie2-build -f ${i} ${index}" > /home/ibv/jdurban/TRANSCRIPTOMES/results/assembly/Trinty_DIAG_5/mapping/index/temp
+
+###### NO FER-HO MES. LLENÇAR-LO MANUALMENT ######
+#qsub -N bowtie-build -q exe-x86_64 -l nodes=1:ppn=1 /home/ibv/jdurban/TRANSCRIPTOMES/results/assembly/Trinty_DIAG_5/mapping/index/temp
+
+echo "bowtie2 -k 1 -p 2 --non-deterministic --very-sensitive -x ${index} -f /home/ibv/jdurban/TRANSCRIPTOMES/results/collapsed/GZX_5_collapsed.fastq -S /home/ibv/jdurban/TRANSCRIPTOMES/results/assembly/Trinty_DIAG_5/mapping/${name}.sam >/home/ibv/jdurban/TRANSCRIPTOMES/results/assembly/Trinty_DIAG_5/mapping/logs/${name}.log 2>&1"  > /home/ibv/jdurban/TRANSCRIPTOMES/results/assembly/Trinty_DIAG_5/mapping/index/temp
+
+####### proves #######
+#echo "bowtie2 -k 1 --non-deterministic -p 2 --very-sensitive -x /home/ibv/jdurban/TRANSCRIPTOMES/results/assembly/Trinty_DIAG_8/mapping/index/BLAST_pla2.idx -f /home/ibv/jdurban/TRANSCRIPTOMES/results/collapsed/GZX_8_collapsed.fastq -S /home/ibv/jdurban/TRANSCRIPTOMES/results/assembly/Trinty_DIAG_8/mapping/BLAST_pla2_vsglo_k1.sam >/home/ibv/jdurban/TRANSCRIPTOMES/results/assembly/Trinty_DIAG_8/mapping/logs/BLAST_pla2_vsglo_k1.log 2>&1"  > /home/ibv/jdurban/TRANSCRIPTOMES/results/assembly/Trinty_DIAG_8/mapping/index/temp
+ 
+
+###### NO FER-HO MES: LLENÇAR-LO MANUALMENT ########
+qsub -N bowtie2 -q exe-x86_64 -l nodes=1:ppn=2 /home/ibv/jdurban/TRANSCRIPTOMES/results/assembly/Trinty_DIAG_5/mapping/index/temp
+done
+
+

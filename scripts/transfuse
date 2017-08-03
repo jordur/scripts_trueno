@@ -1,0 +1,21 @@
+#!/bin/bash
+for i in `seq 1 1 7`; do
+	echo "#!/bin/bash" > /home/ibv/jdurban/MinION/Assembly_Illumina_BACs/jobs/transfuse_BAC${i}.sh
+	echo "#SBATCH --job-name="trans_${i}"" >> /home/ibv/jdurban/MinION/Assembly_Illumina_BACs/jobs/transfuse_BAC${i}.sh
+	echo "#SBATCH --mem=20G" >> /home/ibv/jdurban/MinION/Assembly_Illumina_BACs/jobs/transfuse_BAC${i}.sh
+	echo "export tmpdir=/scratch-global/jdurban" >> /home/ibv/jdurban/MinION/Assembly_Illumina_BACs/jobs/transfuse_BAC${i}.sh
+	echo "cp /home/ibv/jdurban/MinION/Assembly_Illumina_BACs/BAC${i}/velvet_contigs.fa \$tmpdir" >> /home/ibv/jdurban/MinION/Assembly_Illumina_BACs/jobs/transfuse_BAC${i}.sh
+	echo "cp /home/ibv/jdurban/MinION/Assembly_Illumina_BACs/BAC${i}/spades_contigs.fa \$tmpdir" >> /home/ibv/jdurban/MinION/Assembly_Illumina_BACs/jobs/transfuse_BAC${i}.sh
+	echo "cp /home/ibv/jdurban/MinION/Assembly_Illumina_BACs/data_processing/Bac${i}_notCombined_*.fastq \$tmpdir" >> /home/ibv/jdurban/MinION/Assembly_Illumina_BACs/jobs/transfuse_BAC${i}.sh
+	echo "cd \$tmpdir" >> /home/ibv/jdurban/MinION/Assembly_Illumina_BACs/jobs/transfuse_BAC${i}.sh
+
+#transfuse --assemblies /home/ibv/jdurban/MALPOLON/results/150827_SND104_A_L008_GZX-25/Oases/25_23_transcripts/re_transrate25/good.transcripts/good.good.transcripts.fa,/home/ibv/jdurban/MALPOLON/results/150827_SND104_A_L008_GZX-25/Trinity/Trinity.Trinity/good.Trinity.Trinity.fasta --left /home/ibv/jdurban/MALPOLON/rawdata/150827_SND104_A_L008_GZX-25/150827_SND104_A_L008_GZX-25_R1-paired.fastq --right /home/ibv/jdurban/MALPOLON/rawdata/150827_SND104_A_L008_GZX-25/150827_SND104_A_L008_GZX-25_R2-paired.fastq --output transfuse_25 --threads 6 --verbose
+
+	echo "transfuse --assemblies spades_contigs.fa,velvet_contigs.fa --left Bac${i}_notCombined_2.fastq --right Bac${i}_notCombined_1.fastq --output transfuse_BAC${i} --threads 6 --verbose" >> /home/ibv/jdurban/MinION/Assembly_Illumina_BACs/jobs/transfuse_BAC${i}.sh
+	echo "exit" >> /home/ibv/jdurban/MinION/Assembly_Illumina_BACs/jobs/transfuse_BAC${i}.sh
+
+cd /home/ibv/jdurban/MinION/Assembly_Illumina_BACs/jobs/
+#sbatch -p q-low transfuse_BAC${i}.sh
+
+done
+

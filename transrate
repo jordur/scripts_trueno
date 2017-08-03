@@ -1,0 +1,22 @@
+<<<<<<< HEAD
+#!/bin/bash
+#SBATCH --job-name="transrate"
+#SBATCH --mem=40G
+#for i in `seq 61 2 71`; do 
+cp /home/ibv/jdurban/MALPOLON/results/transfuse_18/transfuse_18_cons.fa $SLURMTMP
+cp /home/ibv/jdurban/MALPOLON/results/transfuse_18/150807_SND405_A_L003_GZX-18_R1-paired.fastq $SLURMTMP
+cp /home/ibv/jdurban/MALPOLON/results/transfuse_18/150807_SND405_A_L003_GZX-18_R2-paired.fastq $SLURMTMP
+#done
+cd $SLURMTMP
+
+#transrate --assembly transcripts_25.fa,transcripts_27.fa,transcripts_29.fa,transcripts_31.fa,transcripts_33.fa,transcripts_35.fa,transcripts_37.fa,transcripts_39.fa,transcripts_41.fa,transcripts_43.fa,transcripts_45.fa,transcripts_47.fa,transcripts_49.fa,transcripts_51.fa,transcripts_53.fa,transcripts_55.fa,transcripts_57.fa,transcripts_59.fa,transcripts_61.fa,transcripts_63.fa,transcripts_65.fa,transcripts_67.fa,transcripts_69.fa,transcripts_71.fa --left /home/ibv/jdurban/rockyta/SRR441163/rawdata/SRR441163_R1-paired.fastq --right /home/ibv/jdurban/rockyta/SRR441163/rawdata/SRR441163_R2-paired.fastq --output /home/ibv/jdurban/rockyta/SRR441163/results/assembly --loglevel error
+mkdir transrate_18
+
+transrate --assembly transfuse_18_cons.fa --left 150807_SND405_A_L003_GZX-18_R1-paired.fastq --right 150807_SND405_A_L003_GZX-18_R2-paired.fastq --output transrate_18 --loglevel error
+
+mv transrate_18 /home/ibv/jdurban/MALPOLON/results/transfuse_18
+exit
+#run_high.sh transrate_prova transrate_prova nodes=6
+=======
+transrate --assembly /home/ibv/jdurban/MALPOLON/results/150807_SND405_A_L003_GZX-18/Oases/18_23/transcripts.fa,/home/ibv/jdurban/MALPOLON/results/150807_SND405_A_L003_GZX-18/Oases/18_25/transcripts.fa,/home/ibv/jdurban/MALPOLON/results/150807_SND405_A_L003_GZX-18/Oases/18_27/transcripts.fa,/home/ibv/jdurban/MALPOLON/results/150807_SND405_A_L003_GZX-18/Oases/18_29/transcripts.fa,/home/ibv/jdurban/MALPOLON/results/150807_SND405_A_L003_GZX-18/Oases/18_31/transcripts.fa,/home/ibv/jdurban/MALPOLON/results/150807_SND405_A_L003_GZX-18/Oases/18_33/transcripts.fa,/home/ibv/jdurban/MALPOLON/results/150807_SND405_A_L003_GZX-18/Oases/18_35/transcripts.fa,/home/ibv/jdurban/MALPOLON/results/150807_SND405_A_L003_GZX-18/Oases/18_37/transcripts.fa,/home/ibv/jdurban/MALPOLON/results/150807_SND405_A_L003_GZX-18/Oases/18_39/transcripts.fa,/home/ibv/jdurban/MALPOLON/results/150807_SND405_A_L003_GZX-18/Oases/18_41/transcripts.fa,/home/ibv/jdurban/MALPOLON/results/150807_SND405_A_L003_GZX-18/Oases/18_43/transcripts.fa,/home/ibv/jdurban/MALPOLON/results/150807_SND405_A_L003_GZX-18/Oases/18_45/transcripts.fa,/home/ibv/jdurban/MALPOLON/results/150807_SND405_A_L003_GZX-18/Oases/18_47/transcripts.fa,/home/ibv/jdurban/MALPOLON/results/150807_SND405_A_L003_GZX-18/Oases/18_49/transcripts.fa,/home/ibv/jdurban/MALPOLON/results/150807_SND405_A_L003_GZX-18/Oases/18_51/transcripts.fa,/home/ibv/jdurban/MALPOLON/results/150807_SND405_A_L003_GZX-18/Oases/18_53/transcripts.fa,/home/ibv/jdurban/MALPOLON/results/150807_SND405_A_L003_GZX-18/Oases/18_55/transcripts.fa,/home/ibv/jdurban/MALPOLON/results/150807_SND405_A_L003_GZX-18/Oases/18_57/transcripts.fa,/home/ibv/jdurban/MALPOLON/results/150807_SND405_A_L003_GZX-18/Oases/18_59/transcripts.fa,/home/ibv/jdurban/MALPOLON/results/150807_SND405_A_L003_GZX-18/Oases/18_61/transcripts.fa,/home/ibv/jdurban/MALPOLON/results/150807_SND405_A_L003_GZX-18/Oases/18_63/transcripts.fa,/home/ibv/jdurban/MALPOLON/results/150807_SND405_A_L003_GZX-18/Oases/18_65/transcripts.fa,/home/ibv/jdurban/MALPOLON/results/150807_SND405_A_L003_GZX-18/Oases/18_67/transcripts.fa,/home/ibv/jdurban/MALPOLON/results/150807_SND405_A_L003_GZX-18/Oases/18_69/transcripts.fa,/home/ibv/jdurban/MALPOLON/results/150807_SND405_A_L003_GZX-18/Oases/18_71/transcripts.fa --left /home/ibv/jdurban/MALPOLON/rawdata/150807_SND405_A_L003_GZX-18/150807_SND405_A_L003_GZX-18_R1-paired.fastq --right /home/ibv/jdurban/MALPOLON/rawdata/150807_SND405_A_L003_GZX-18/150807_SND405_A_L003_GZX-18_R2-paired.fastq --output /home/ibv/jdurban/MALPOLON/results/150807_SND405_A_L003_GZX-18/Oases --threads 6 --loglevel error
+>>>>>>> ca15b09d40a602dbf03db202f3c73e6929cc5aaf

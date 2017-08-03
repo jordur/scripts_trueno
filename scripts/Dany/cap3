@@ -1,0 +1,10 @@
+#!/bin/bash
+#SBATCH --job-name="CAP3_dany"
+#SBATCH --mem=30G
+cp /home/ibv/jdurban/Dany/Tv_1/CAP3/all_contigs.fa $SLURMTMP
+cd $SLURMTMP
+
+### CAP3 ASSEMBLY ###
+cap3 all_contigs.fa -p 98 -f 5
+mv * $SLURM_SUBMIT_DIR
+exit

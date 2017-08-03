@@ -1,0 +1,11 @@
+#!/bin/sh 
+#$BATCH --job-name="bowtie"
+#SBATCH --mem=40G
+
+cp /home/ibv/jdurban/MALPOLON/results/150730_SND104_A_L006_GZX-21/150730_SND104_A_L006_GZX-21_collapsed.fastq /home/ibv/jdurban/db/rRNA.database.fasta $SLURMTMP;
+
+cd $SLURMTMP 
+
+bowtie2-build rRNA.database.fasta /home/ibv/jdurban/db/rRNA_bowtie 
+
+bowtie2 --very-sensitive -U 150730_SND104_A_L006_GZX-21_collapsed.fastq -x /home/ibv/jdurban/db/rRNA_bowtie -f --non-deterministic -p 4

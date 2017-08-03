@@ -1,0 +1,182 @@
+Pilon version 1.22 Wed Mar 15 16:38:30 2017 -0400
+Genome: Canu_assembly_Bjararaca_NB01.contigs.fasta
+Fixing snps, indels, gaps, local
+Input genome size: 195024
+Scanning BAMs
+Bjararaca_NB01.contigs.sorted.bam: 12874 reads, 0 filtered, 6887 mapped, 0 proper, 0 stray, Unpaired 100% 9046+/-5803, max 26454 unpaired
+Processing tig00000001:1-195024
+unpaired Bjararaca_NB01.contigs.sorted.bam: coverage 281
+Total Reads: 6887, Coverage: 281, minDepth: 28
+Confirmed 163568 of 195024 bases (83,87%)
+Corrected 0 snps; 1 ambiguous bases; corrected 1 small insertions totaling 1 bases, 0 small deletions totaling 0 bases
+# Attempting to fix local continuity breaks
+# fix break: tig00000001:192039 0 -0 +0 NoSolution
+# fix break: tig00000001:192607 0 -0 +0 NoSolution
+tig00000001:1-195024 log:
+Finished processing tig00000001:1-195024
+Writing updated tig00000001_pilon to polish/pilon_output_NB01.fasta
+Mean unpaired coverage: 281
+Mean total coverage: 281
+Pilon version 1.22 Wed Mar 15 16:38:30 2017 -0400
+Genome: Canu_assembly_Bjararaca_NB02.contigs.fasta
+Fixing snps, indels, gaps, local
+Input genome size: 184774
+Scanning BAMs
+Bjararaca_NB02.contigs.sorted.bam: 5826 reads, 0 filtered, 4177 mapped, 0 proper, 0 stray, Unpaired 100% 9451+/-6208, max 28074 unpaired
+Processing tig00000001:1-184774
+unpaired Bjararaca_NB02.contigs.sorted.bam: coverage 184
+Total Reads: 4177, Coverage: 184, minDepth: 18
+Confirmed 145806 of 184774 bases (78,91%)
+Corrected 0 snps; 2 ambiguous bases; corrected 3 small insertions totaling 6 bases, 0 small deletions totaling 0 bases
+# Attempting to fix local continuity breaks
+# fix break: tig00000001:5037-5038 0 -0 +0 NoSolution
+# fix break: tig00000001:5247-5257 0 -0 +0 NoSolution
+# fix break: tig00000001:5753-14554 0 -0 +0 NoSolution
+# fix break: tig00000001:177055-178476 0 -0 +0 NoSolution
+tig00000001:1-184774 log:
+Finished processing tig00000001:1-184774
+Writing updated tig00000001_pilon to polish/pilon_output_NB02.fasta
+Mean unpaired coverage: 184
+Mean total coverage: 184
+Pilon version 1.22 Wed Mar 15 16:38:30 2017 -0400
+Genome: Canu_assembly_Bjararaca_NB03.contigs.fasta
+Fixing snps, indels, gaps, local
+Input genome size: 215821
+Scanning BAMs
+Bjararaca_NB03.contigs.sorted.bam: 12502 reads, 0 filtered, 5538 mapped, 0 proper, 0 stray, Unpaired 100% 11660+/-7448, max 34005 unpaired
+Processing tig00000001:1-215821
+unpaired Bjararaca_NB03.contigs.sorted.bam: coverage 276
+Total Reads: 5538, Coverage: 276, minDepth: 28
+Confirmed 167226 of 215821 bases (77,48%)
+Corrected 0 snps; 2 ambiguous bases; corrected 1 small insertions totaling 2 bases, 0 small deletions totaling 0 bases
+# Attempting to fix local continuity breaks
+# fix break: tig00000001:4379 0 -0 +0 NoSolution
+# fix break: tig00000001:9069-9117 0 -0 +0 NoSolution
+# fix break: tig00000001:9356-9639 0 -0 +0 NoSolution
+# fix break: tig00000001:9902-16196 0 -0 +0 NoSolution
+# fix break: tig00000001:16481-16482 0 -0 +0 NoSolution
+# fix break: tig00000001:209534-209849 0 -0 +0 NoSolution
+tig00000001:1-215821 log:
+Finished processing tig00000001:1-215821
+Writing updated tig00000001_pilon to polish/pilon_output_NB03.fasta
+Mean unpaired coverage: 276
+Mean total coverage: 276
+Pilon version 1.22 Wed Mar 15 16:38:30 2017 -0400
+Genome: Canu_assembly_Bjararaca_NB04.contigs.fasta
+Fixing snps, indels, gaps, local
+Input genome size: 187933
+Scanning BAMs
+Bjararaca_NB04.contigs.sorted.bam: 2585 reads, 0 filtered, 1577 mapped, 0 proper, 0 stray, Unpaired 100% 8849+/-6612, max 28684 unpaired
+Processing tig00000003:1-187933
+unpaired Bjararaca_NB04.contigs.sorted.bam: coverage 63
+Total Reads: 1577, Coverage: 63, minDepth: 6
+Confirmed 158415 of 187933 bases (84,29%)
+Corrected 3 snps; 2 ambiguous bases; corrected 3 small insertions totaling 4 bases, 2 small deletions totaling 3 bases
+# Attempting to fix local continuity breaks
+# fix break: tig00000003:1220-1289 0 -0 +0 NoSolution
+tig00000003:1-187933 log:
+Finished processing tig00000003:1-187933
+Writing updated tig00000003_pilon to polish/pilon_output_NB04.fasta
+Mean unpaired coverage: 63
+Mean total coverage: 63
+Pilon version 1.22 Wed Mar 15 16:38:30 2017 -0400
+Genome: Canu_assembly_Bjararaca_NB05.contigs.fasta
+Fixing snps, indels, gaps, local
+Input genome size: 159388
+Scanning BAMs
+Bjararaca_NB05.contigs.sorted.bam: 842 reads, 0 filtered, 617 mapped, 0 proper, 0 stray, Unpaired 100% 6460+/-5067, max 10000 unpaired
+Processing tig00000002:1-30512
+unpaired Bjararaca_NB05.contigs.sorted.bam: coverage 20
+Total Reads: 112, Coverage: 20, minDepth: 5
+Confirmed 23595 of 30512 bases (77,33%)
+Corrected 22 snps; 4 ambiguous bases; corrected 5 small insertions totaling 7 bases, 2 small deletions totaling 6 bases
+# Attempting to fix local continuity breaks
+# fix break: tig00000002:28126-28263 0 -0 +0 NoSolution
+# fix break: tig00000002:28718-28720 0 -0 +0 NoSolution
+tig00000002:1-30512 log:
+Finished processing tig00000002:1-30512
+Processing tig00000003:1-128876
+unpaired Bjararaca_NB05.contigs.sorted.bam: coverage 21
+Total Reads: 505, Coverage: 21, minDepth: 5
+Confirmed 102232 of 128876 bases (79,33%)
+Corrected 109 snps; 12 ambiguous bases; corrected 24 small insertions totaling 31 bases, 6 small deletions totaling 7 bases
+# Attempting to fix local continuity breaks
+# fix break: tig00000003:3473-3596 0 -0 +0 NoSolution
+# fix break: tig00000003:3807-4408 0 -0 +0 NoSolution
+# fix break: tig00000003:68562 0 -0 +0 NoSolution
+# fix break: tig00000003:108792-110304 0 -0 +0 NoSolution
+# fix break: tig00000003:110809 0 -0 +0 NoSolution
+# fix break: tig00000003:111203 0 -0 +0 NoSolution
+# fix break: tig00000003:111464-113302 0 -0 +0 NoSolution
+# fix break: tig00000003:116814-116817 0 -0 +0 NoSolution
+tig00000003:1-128876 log:
+Finished processing tig00000003:1-128876
+Writing updated tig00000002_pilon to polish/pilon_output_NB05.fasta
+Writing updated tig00000003_pilon to polish/pilon_output_NB05.fasta
+Mean unpaired coverage: 21
+Mean total coverage: 21
+Pilon version 1.22 Wed Mar 15 16:38:30 2017 -0400
+Genome: Canu_assembly_Bjararaca_NB06.contigs.fasta
+Fixing snps, indels, gaps, local
+Input genome size: 214124
+Scanning BAMs
+Bjararaca_NB06.contigs.sorted.bam: 7931 reads, 0 filtered, 4576 mapped, 0 proper, 0 stray, Unpaired 100% 5639+/-4299, max 18536 unpaired
+Processing tig00000004:1-25314
+unpaired Bjararaca_NB06.contigs.sorted.bam: coverage 64
+Total Reads: 370, Coverage: 64, minDepth: 6
+Confirmed 18189 of 25314 bases (71,85%)
+Corrected 0 snps; 1 ambiguous bases; corrected 3 small insertions totaling 4 bases, 4 small deletions totaling 5 bases
+tig00000004:1-25314 log:
+Finished processing tig00000004:1-25314
+Processing tig00000005:1-124893
+unpaired Bjararaca_NB06.contigs.sorted.bam: coverage 120
+Total Reads: 3173, Coverage: 120, minDepth: 12
+Confirmed 101728 of 124893 bases (81,45%)
+Corrected 0 snps; 2 ambiguous bases; corrected 3 small insertions totaling 8 bases, 1 small deletions totaling 1 bases
+# Attempting to fix local continuity breaks
+# fix break: tig00000005:2386-2387 0 -0 +0 NoSolution
+# fix break: tig00000005:97075-97389 0 -0 +0 NoSolution
+tig00000005:1-124893 log:
+Finished processing tig00000005:1-124893
+Processing tig00000007:1-28401
+unpaired Bjararaca_NB06.contigs.sorted.bam: coverage 76
+Total Reads: 439, Coverage: 76, minDepth: 8
+Confirmed 22200 of 28401 bases (78,17%)
+Corrected 2 snps; 0 ambiguous bases; corrected 5 small insertions totaling 9 bases, 1 small deletions totaling 1 bases
+tig00000007:1-28401 log:
+Finished processing tig00000007:1-28401
+Processing tig00000008:1-35516
+unpaired Bjararaca_NB06.contigs.sorted.bam: coverage 88
+Total Reads: 594, Coverage: 88, minDepth: 9
+Confirmed 26567 of 35516 bases (74,80%)
+Corrected 2 snps; 0 ambiguous bases; corrected 0 small insertions totaling 0 bases, 1 small deletions totaling 1 bases
+# Attempting to fix local continuity breaks
+# fix break: tig00000008:31640-31650 0 -0 +0 NoSolution
+# fix break: tig00000008:32047 0 -0 +0 NoSolution
+# fix break: tig00000008:32421-32534 0 -0 +0 NoSolution
+# fix break: tig00000008:32872-34075 0 -0 +0 NoSolution
+tig00000008:1-35516 log:
+Finished processing tig00000008:1-35516
+Writing updated tig00000004_pilon to polish/pilon_output_NB06.fasta
+Writing updated tig00000005_pilon to polish/pilon_output_NB06.fasta
+Writing updated tig00000007_pilon to polish/pilon_output_NB06.fasta
+Writing updated tig00000008_pilon to polish/pilon_output_NB06.fasta
+Mean unpaired coverage: 102
+Mean total coverage: 102
+Pilon version 1.22 Wed Mar 15 16:38:30 2017 -0400
+Genome: Canu_assembly_Bjararaca_NB07.contigs.fasta
+Fixing snps, indels, gaps, local
+Input genome size: 158940
+Scanning BAMs
+Bjararaca_NB07.contigs.sorted.bam: 4998 reads, 0 filtered, 3070 mapped, 0 proper, 0 stray, Unpaired 100% 9594+/-6438, max 28909 unpaired
+Processing tig00000001:1-158940
+unpaired Bjararaca_NB07.contigs.sorted.bam: coverage 161
+Total Reads: 3070, Coverage: 161, minDepth: 16
+Confirmed 130661 of 158940 bases (82,21%)
+Corrected 0 snps; 1 ambiguous bases; corrected 1 small insertions totaling 1 bases, 0 small deletions totaling 0 bases
+tig00000001:1-158940 log:
+Finished processing tig00000001:1-158940
+Writing updated tig00000001_pilon to polish/pilon_output_NB07.fasta
+Mean unpaired coverage: 161
+Mean total coverage: 161
+mv: no s’ha pogut moure entre dispositius: «polish» a «/home/ibv/jdurban/MinION/Bjararaca/polish»; no s’ha pogut eliminar la destinació: El directori no és buit

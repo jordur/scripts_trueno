@@ -1,0 +1,12 @@
+trim_galore --fastqc --length 50 -q 30 -o /home/ibv/jdurban/TRANSCRIPTOMES/results /home/ibv/jdurban/TRANSCRIPTOMES/131212_SND393_A_L005_GZX-10_R1.fastq
+
+trim_galore --fastqc --length 50 -q 30 -o /home/ibv/jdurban/TRANSCRIPTOMES/results /home/ibv/jdurban/TRANSCRIPTOMES/131212_SND393_A_L005_GZX-9_R1.fastq
+
+trim_galore --fastqc --length 50 -q 30 -o /home/ibv/jdurban/TRANSCRIPTOMES/results /home/ibv/jdurban/TRANSCRIPTOMES/131212_SND393_A_L005_GZX-8_R1.fastq
+
+trim_galore --fastqc --length 50 -q 30 -o /home/ibv/jdurban/TRANSCRIPTOMES/results /home/ibv/jdurban/TRANSCRIPTOMES/131212_SND393_A_L005_GZX-7_R1.fastq
+
+trim_galore --fastqc --length 50 -q 30 -o /home/ibv/jdurban/TRANSCRIPTOMES/results /home/ibv/jdurban/TRANSCRIPTOMES/131212_SND393_A_L005_GZX-6_R1.fastq
+
+trim_galore --fastqc --length 50 -q 30 -o /home/ibv/jdurban/TRANSCRIPTOMES/results /home/ibv/jdurban/TRANSCRIPTOMES/131212_SND393_A_L005_GZX-5_R1_fastqc
+

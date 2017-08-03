@@ -1,0 +1,14 @@
+#!/bin/sh 
+### Script per llançar blastx usant SLURM_ARRAY ###
+#SBATCH --job-name="Selfblast"
+#SBATCH --mem="15G"
+#export tmpblast=/scratch-global/$SLURM_JOB_USER
+cp /home/ibv/jdurban/MinION/Bjararaca_Bjararaca_3_unmapped_novector/split_unmapped/Bjararaca_unmapped_* $SLURMTMP
+cd $SLURMTMP
+
+blastn -task blastn -db /home/ibv/jdurban/MinION/Bjararaca_Bjararaca_3_unmapped_novector/split_unmapped/vector_BAC_7507  -evalue 0.0001 -outfmt 5 -query Bjararaca_unmapped_${SLURM_ARRAY_TASK_ID}.fasta -show_gis -max_target_seqs 1 -max_hsps 1 -num_threads 4 -out Bjararaca_unmapped_blast_${SLURM_ARRAY_TASK_ID}.xml
+
+cp Bjararaca_unmapped_blast_*.xml /home/ibv/jdurban/MinION/Bjararaca_Bjararaca_3_unmapped_novector/blast_to_7507
+exit
+#sbatch -p Q-low -n 6 --mem=15G --array=0-24 --job-name=blastX17 ~/scripts/blastX17
+#qsub -N blastX18 -q Q-med -t 0-24 -l nodes=5 ~/scripts/blastx

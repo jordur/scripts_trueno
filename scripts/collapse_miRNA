@@ -1,0 +1,4 @@
+#!/bin/bash
+for i in 12 13 14 15 16; do
+fastx_collapser -i /home/ibv/jdurban/miRNA/miRNA${i}/*_bones.fastq -o /home/ibv/jdurban/miRNA/miRNA${i}/results/miRNA${i}_collapsed.fastq -v
+done

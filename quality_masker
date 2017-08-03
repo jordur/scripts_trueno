@@ -1,0 +1,1 @@
+fastq_masker -i /home/ibv/jdurban/TRANSCRIPTOMES/results/131212_SND393_A_L005_GZX-5_R1_trimmed.fq -o /home/ibv/jdurban/TRANSCRIPTOMES/results/masked/131212_SND393_A_L005_GZX-5_R1_trimmed_masked.fq -v

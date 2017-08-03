@@ -1,0 +1,5 @@
+#!/bin/sh 
+### Script per llançar blastx usant PBS_ARRAY ###
+blastn -task blastn -db /home/ibv/jdurban/db/nt/nt -evalue 0.001 -outfmt 5 -query /home/ibv/jdurban/MALPOLON/results/150807_SND405_A_L003_GZX-18/transfuse/Repeat/blastn_toxines.fasta.masked -show_gis -max_target_seqs 1 -max_hsps 1 -num_threads 6 -out /home/ibv/jdurban/MALPOLON/results/150807_SND405_A_L003_GZX-18/transfuse/Repeat/blastresults/blastn_toxines.fasta.masked.xml
+#sbatch -p Q-low -n 6 --mem=15G --array=0-24 --job-name=blastX17 ~/scripts/blastX17
+#qsub -N blastX18 -q Q-med -t 0-24 -l nodes=5 ~/scripts/blastx

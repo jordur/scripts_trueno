@@ -1,0 +1,22 @@
+#!/bin/sh 
+#SBATCH --job-name="Pilon"
+##SBATCH --mem=150G
+#SBATCH --mem=35G
+dir=/home/ibv/jdurban/MinION/Bjararaca;
+
+export tmppilon=/scratch-global/$SLURM_JOB_USER
+#cp /home/ibv/jdurban/MinION/Bjararaca/Canu_assembly_Bjararaca_Bjararaca_3_unmapped_novector.contigs.fasta $tmppilon
+#cp /home/ibv/jdurban/MinION/Bjararaca/map_NB01/Bjararaca_NB01.contigs.sorted.bam* $tmppilon
+cd $tmppilon
+mkdir polish
+for uniqueBC in `ls $dir/*.fastq | xargs -n1 basename`; do
+        uniqueBC=`echo "$uniqueBC" | sed "s/_good.fastq//"`
+#       echo $uniqueBC
+	cp /home/ibv/jdurban/MinION/Bjararaca/map_${uniqueBC}/Bjararaca_${uniqueBC}.contigs.sorted.bam* $tmppilon
+java -Xmx150G -jar /home/ibv/jdurban/programas/pilon-1.22.jar --genome Canu_assembly_Bjararaca_${uniqueBC}.contigs.fasta --bam Bjararaca_${uniqueBC}.contigs.sorted.bam --outdir polish --output pilon_output_${uniqueBC}
+done
+mv polish /home/ibv/jdurban/MinION/Bjararaca
+
+exit
+#sbatch -p Q-low -n 6 --mem=15G --array=0-24 --job-name=blastX17 ~/scripts/blastX17
+#qsub -N blastX18 -q Q-med -t 0-24 -l nodes=5 ~/scripts/blastx

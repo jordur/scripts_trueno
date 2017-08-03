@@ -1,0 +1,8 @@
+### Script per llançar com a jobs separats i usant 4 cores els arxius que no acabaven mai de 150807_SND405_A_L003_GZX-17 ###
+
+#for i in 3 5 6 10 11 13 14 16 17 18 19 20; do 
+for i in 13 14 16 17 18 19 20; do ## Inexplicablement han desaparegut aqeusts treballs
+	echo "blastall -p blastn -d /home/ibv/jdurban/db/nt/nt -e 0.001 -m 7 -i /home/ibv/jdurban/MALPOLON/results/150807_SND405_A_L003_GZX-17/transfuse/fasta_files/transfuse_17_cons.fa${i}.fasta -I -v 2 -b 2 -a 4 -o /home/ibv/jdurban/MALPOLON/results/150807_SND405_A_L003_GZX-17/transfuse/fasta_files/blast_results/blastN_results_${i}" > /home/ibv/jdurban/MALPOLON/results/150807_SND405_A_L003_GZX-17/transfuse/fasta_files/blast_${i}
+
+	qsub -N blast_${i} -q exe-x86_64 -l nodes=1:ppn=4 /home/ibv/jdurban/MALPOLON/results/150807_SND405_A_L003_GZX-17/transfuse/fasta_files/blast_${i}
+done

@@ -1,0 +1,1 @@
+/home/ibv/jdurban/scripts/GlimmerHMM/bin/glimmerhmm_linux /home/ibv/jdurban/scolopendra/ena.fasta -d /home/ibv/jdurban/scripts/GlimmerHMM/trained_dir/Celegans/ -o /home/ibv/jdurban/scolopendra/glimmer_output

@@ -1,0 +1,3 @@
+transrate --assembly /home/ibv/jdurban/MALPOLON/results/150807_SND405_A_L003_GZX-18/transfuse/CAP3/singlets.cap.fasta,/home/ibv/jdurban/MALPOLON/results/150807_SND405_A_L003_GZX-18/transfuse/CAP3/contigs.cap.fasta --left /home/ibv/jdurban/MALPOLON/rawdata/150807_SND405_A_L003_GZX-18/150807_SND405_A_L003_GZX-18_R1-paired.fastq --right /home/ibv/jdurban/MALPOLON/rawdata/150807_SND405_A_L003_GZX-18/150807_SND405_A_L003_GZX-18_R2-paired.fastq --output /home/ibv/jdurban/MALPOLON/results/150807_SND405_A_L003_GZX-18/transfuse/cap3_transrate --threads 6 --loglevel error
+
+#run_high.sh transrate_prova transrate_prova nodes=6

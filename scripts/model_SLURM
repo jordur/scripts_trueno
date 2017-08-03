@@ -1,0 +1,14 @@
+#### Aquest script es diu ejemplo.sh ####
+########################################
+
+#!/bin/bash
+#SBATCH --job-name="Ejemplo1"
+#SBATCH --time=02:00:00
+cp fichero.entrada $TMPDI
+cp otros-ficheros-sin-son-necesarios $TMPDIR
+cd $TMPDIR
+[directorio-ejecutable]ejecutable    fichero.entrada     
+mv ficheros.salida  $SLURM_SUBMIT_DIR
+exit
+
+I l'executem sbatch -p Q-low -N1 -n2 ejemplo.sh

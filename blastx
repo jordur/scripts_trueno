@@ -1,0 +1,3 @@
+blastall -p blastx -d /home/ibv/jdurban/db/SwissProt -e 0.001 -m 7 -i /home/ibv/jdurban/MALPOLON/results/150827_SND104_A_L008_GZX-25/transfuse/fasta_files/transfuse_25_cons.fa${PBS_ARRAYID}.fasta -I -v 2 -b 2 -a 2 -o /home/ibv/jdurban/MALPOLON/results/150827_SND104_A_L008_GZX-25/transfuse/fasta_files/blast_results/blastX_results_${PBS_ARRAYID}
+
+#qsub -N blast -q exe-x86_64 -l nodes=1:ppn=2 -t 0-24 ~/scripts/blast

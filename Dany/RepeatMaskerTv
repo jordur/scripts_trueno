@@ -1,0 +1,9 @@
+#!/bin/sh 
+#SBATCH --job-name="Repeat_Mask"
+#SBATCH --mem=15G
+cp /home/ibv/jdurban/Dany/Tv_1/CAP3/blastresults/Repeat/resultado_Tv_${SLURM_ARRAY_TASK_ID} $SLURMTMP
+cd $SLURMTMP
+
+RepeatMasker -e crossmatch -pa 2 -s -species "vertebrata metazoa" -html resultado_Tv_${SLURM_ARRAY_TASK_ID} -dir /home/ibv/jdurban/Dany/Tv_1/CAP3/blastresults/Repeat
+#sbatch -p Q-low -n 6 --mem=15G --job-name=Repeat ~/scripts/Repeat
+#qsub -N blastX18 -q Q-med -t 0-24 -l nodes=5 ~/scripts/blastx

@@ -1,0 +1,14 @@
+#! /bin/bash
+export dir=/media/bec2-jcalvete/Elements/Minion_Illumina_Brasil/trimmed
+echo "Comença l'assemblatge amb SPAdes..:"
+
+for i in `seq 1 1 7`; do 
+	mkdir /media/bec2-jcalvete/Elements/Minion_Illumina_Brasil/trimmed/assembly/Bjararaca_spades/Assembly_BAC${i}
+	echo "Assemblatge mostra BAC${i}"
+#/home/bec2-jcalvete/Feina_Jordi/programes/SPAdes-3.10.1-Linux/bin/spades.py --pe1-1 $dir/Bac1High_S11_L001_R1_001.fastq.gz_good.fastq_clean.fastq-common.fq.notCombined_1.fastq --pe1-2 $dir/Bac1High_S11_L001_R1_001.fastq.gz_good.fastq_clean.fastq-common.fq.notCombined_2.fastq --pe1-s $dir/Bac1High.singles.fastq --pe1-rf --pe2-1 $dir/Bac2High_S12_L001_R1_001.fastq.gz_good.fastq_clean.fastq-common.fq.notCombined_1.fastq --pe2-2 $dir/Bac2High_S12_L001_R1_001.fastq.gz_good.fastq_clean.fastq-common.fq.notCombined_2.fastq --pe2-s $dir/Bac2High.singles.fastq --pe2-rf --pe3-1 $dir/Bac3High_S13_L001_R1_001.fastq.gz_good.fastq_clean.fastq-common.fq.notCombined_1.fastq --pe3-2 $dir/Bac3High_S13_L001_R1_001.fastq.gz_good.fastq_clean.fastq-common.fq.notCombined_2.fastq --pe3-s Bac3High_S13.singles.fastq --pe3-rf --pe4-1 Bac4High_S14_L001_R1_001.fastq.gz_good.fastq_clean.fastq-common.fq.notCombined_1.fastq --pe4-2 Bac4High_S14_L001_R1_001.fastq.gz_good.fastq_clean.fastq-common.fq.notCombined_2.fastq --pe4-s Bac4High_S14.singles.fastq --pe4-rf --pe5-1 Bac5High_S15_L001_R1_001.fastq.gz_good.fastq_clean.fastq-common.fq.notCombined_1.fastq --pe5-2 Bac5High_S15_L001_R1_001.fastq.gz_good.fastq_clean.fastq-common.fq.notCombined_2.fastq --pe5-s Bac5High_S15.singles.fastq --pe5-rf --pe6-1 Bac6High_S16_L001_R1_001.fastq.gz_good.fastq_clean.fastq-common.fq.notCombined_1.fastq --pe6-2 Bac6High_S16_L001_R1_001.fastq.gz_good.fastq_clean.fastq-common.fq.notCombined_2.fastq --pe6-s Bac6High_S16.singles.fastq --pe6-rf --pe7-1 Bac7High_S17_L001_R1_001.fastq.gz_good.fastq_clean.fastq-common.fq.notCombined_1.fastq --pe7-2 Bac7High_S17_L001_R1_001.fastq.gz_good.fastq_clean.fastq-common.fq.notCombined_2.fastq --pe7-s Bac7High_S17.singles.fastq --pe7-rf --pe8-1 Bac8_S8_L001_R1_001.fastq.gz_good.fastq_clean.fastq-common.fq.notCombined_1.fastq --pe8-2 Bac8_S8_L001_R1_001.fastq.gz_good.fastq_clean.fastq-common.fq.notCombined_2.fastq --pe8-s Bac8_S8.singles.fastq --pe8-rf -o /media/bec2-jcalvete/Elements/Minion_Illumina_Brasil/trimmed/assembly/Bjararaca_spades 
+
+	/home/bec2-jcalvete/Feina_Jordi/programes/SPAdes-3.10.1-Linux/bin/spades.py -t 6 --pe1-1 $dir/Bac${i}High*_good.fastq_clean.fastq-common.fq.notCombined_1.fastq --pe1-2 $dir/Bac${i}High*_good.fastq_clean.fastq-common.fq.notCombined_2.fastq --pe1-s $dir/Bac${i}*.singles.fastq -o /media/bec2-jcalvete/Elements/Minion_Illumina_Brasil/trimmed/assembly/Bjararaca_spades/Assembly_BAC${i}/ | tee /media/bec2-jcalvete/Elements/Minion_Illumina_Brasil/trimmed/assembly/Bjararaca_spades/Assembly_BAC${i}/logfile_BAC${i}.log
+	echo "Acabat assemblatge mostra BAC${i}"
+done
+
+echo "Finalitzat l'assemblatge amb SPAdes"

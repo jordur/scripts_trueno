@@ -1,0 +1,23 @@
+#!/bin/bash
+
+<<<<<<< HEAD
+### CONCAT OASES TRANSCRITS ###
+=======
+### CANCAT OASES TRANSCRITS ###
+>>>>>>> ca15b09d40a602dbf03db202f3c73e6929cc5aaf
+#for j in 23 25 27 31
+#	do 
+#		transcritos="$transcritos /home/ibv/jdurban/TRANSCRIPTOMES/results/assembly/oases_10/GZX_10_${j}/transcripts.fa"
+#	done
+#cat $transcritos > /home/ibv/jdurban/TRANSCRIPTOMES/results/assembly/cap3_10/oases-transcripts.fa
+
+### Trinity + oases ###
+#cat /home/ibv/jdurban/TRANSCRIPTOMES/results/assembly/cap3_10/oases-transcripts.fa /home/ibv/jdurban/TRANSCRIPTOMES/results/assembly/Trinty_DIAG_10/results_10.Trinity.fasta > /home/ibv/jdurban/TRANSCRIPTOMES/results/assembly/Trinty_DIAG_10/all_contigs.fa
+
+
+### CAP3 ASSEMBLY ###
+<<<<<<< HEAD
+cap3 /home/ibv/jdurban/MALPOLON/results/150807_SND405_A_L003_GZX-17/all_contigs.fa -p 98 -f 5
+=======
+cap3 /home/ibv/jdurban/ANTIC/oases-transcripts.fa -p 98 -f 5
+>>>>>>> ca15b09d40a602dbf03db202f3c73e6929cc5aaf

@@ -1,0 +1,23 @@
+#!/bin/bash
+
+#SBATCH --mem=35G
+### CONCAT OASES TRANSCRITS ###
+#for j in 23 25 27 31
+#	do 
+#		transcritos="$transcritos /home/ibv/jdurban/TRANSCRIPTOMES/results/assembly/oases_10/GZX_10_${j}/transcripts.fa"
+#	done
+#cat $transcritos > /home/ibv/jdurban/TRANSCRIPTOMES/results/assembly/cap3_10/oases-transcripts.fa
+
+### Trinity + oases ###
+#cat /home/ibv/jdurban/TRANSCRIPTOMES/results/assembly/cap3_10/oases-transcripts.fa /home/ibv/jdurban/TRANSCRIPTOMES/results/assembly/Trinty_DIAG_10/results_10.Trinity.fasta > /home/ibv/jdurban/TRANSCRIPTOMES/results/assembly/Trinty_DIAG_10/all_contigs.fa
+
+
+### CAP3 ASSEMBLY ###
+
+cp /home/ibv/jdurban/MinION/Bjararaca/contigs_barcoded.fasta $SLURMTMP
+cd $SLURMTMP
+
+cap3 contigs_barcoded.fasta -p 85 -f 5
+
+mv * /home/ibv/jdurban/MinION/Bjararaca/
+exit

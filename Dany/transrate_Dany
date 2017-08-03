@@ -1,0 +1,11 @@
+#!/bin/bash
+#SBATCH --job-name="tran_cont_dany"
+#SBATCH --mem=100G
+cp /home/ibv/jdurban/Dany/CAP3/all_contigs.fa.cap.contigs /home/ibv/jdurban/Dany/CAP3/all_contigs.fa.cap.singlets /home/ibv/jdurban/Dany/Ca_1_1-paired_prinseq_good_FgEd.fastq_pairs_R1.fastq /home/ibv/jdurban/Dany/Ca_1_2-paired_prinseq_good_fkAE.fastq_pairs_R2.fastq $TMPDIR
+cd $TMPDIR
+
+transrate --assembly all_contigs.fa.cap.contigs,all_contigs.fa.cap.singlets --left Ca_1_1-paired_prinseq_good_FgEd.fastq_pairs_R1.fastq --right Ca_1_2-paired_prinseq_good_fkAE.fastq_pairs_R2.fastq --output /home/ibv/jdurban/Dany/CAP3 --threads 5 --loglevel error
+mv * $SLURM_SUBMIT_DIR
+exit
+
+#run_high.sh transrate_prova transrate_prova nodes=6

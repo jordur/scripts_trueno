@@ -1,0 +1,11 @@
+#!/bin/bash
+#SBATCH --job-name="tran_trin_Tv"
+#SBATCH --mem=200G
+cp /home/ibv/jdurban/Dany/Tv_1/Trinity/Trinity.Trinity.fasta  /home/ibv/jdurban/Dany/Tv_1/Tv_1_1-paired_prinseq_good_Rr78.fastq_pairs_R1.fastq /home/ibv/jdurban/Dany/Tv_1/Tv_1_2-paired_prinseq_good__vWo.fastq_pairs_R2.fastq $SLURMTMP
+cd $SLURMTMP
+
+transrate --assembly Trinity.Trinity.fasta --left Tv_1_1-paired_prinseq_good_Rr78.fastq_pairs_R1.fastq --right Tv_1_2-paired_prinseq_good__vWo.fastq_pairs_R2.fastq --output /home/ibv/jdurban/Dany/Tv_1 --threads 2 --loglevel error
+mv * $SLURM_SUBMIT_DIR
+exit
+
+#run_high.sh transrate_prova transrate_prova nodes=6

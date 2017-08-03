@@ -1,0 +1,5 @@
+#!/bin/sh 
+### Script per llançar blastx usant PBS_ARRAY ###
+blastp -task blastp -db /home/ibv/jdurban/db/uniref100_metazoaDB -evalue 0.001 -outfmt 5 -query /home/ibv/jdurban/Giulia/4311_prova$SLURM_ARRAY_TASK_ID -show_gis -max_target_seqs 1 -max_hsps 1 -num_threads 6 -out /home/ibv/jdurban/Giulia/blastresults/blastP_results_prova$SLURM_ARRAY_TASK_ID
+#sbatch -p Q-low -n 6 --mem=15G --array=0-24 --job-name=blastX17 ~/scripts/blastX17
+#qsub -N blastX18 -q Q-med -t 0-24 -l nodes=5 ~/scripts/blastx

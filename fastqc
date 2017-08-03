@@ -1,0 +1,9 @@
+#!/bin/bash
+
+
+for i in /home/ibv/jdurban/MALPOLON/rawdata/150827_SND104_A_L008_GZX-25_R1.fastq.gz /home/ibv/jdurban/MALPOLON/rawdata/150827_SND104_A_L008_GZX-25_R2.fastq.gz; 
+do 
+
+fastqc $i;
+
+done

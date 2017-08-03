@@ -1,0 +1,4 @@
+#!/bin/bash
+for i in CS CC CT; do
+/home/ibv/jdurban/scripts/cd-hit-v4.6.1-2012-08-27/cd-hit-est -i /home/ibv/jdurban/miRNA/global/${i}/compa_Csimus_${i}.fasta -o /home/ibv/jdurban/miRNA/global/${i}/${i}_compa_Csimus.clusters -c 1 -T 2 -n 10 -b 5 -g 1 -d 100; 
+done

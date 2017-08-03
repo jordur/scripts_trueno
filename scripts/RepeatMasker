@@ -1,0 +1,13 @@
+#!/bin/sh 
+#SBATCH --job-name="Repeat"
+#SBATCH --mem="15G"
+
+cp /home/ibv/jdurban/MinION/RepeatMasker/tig*.fasta $SLURMTMP
+
+### Script per llançar blastx usant PBS_ARRAY ###
+cd $SLURMTMP
+
+RepeatMasker -e crossmatch -pa 6 -s -species "vertebrata metazoa" -html /home/ibv/jdurban/MinION/RepeatMasker/tig00000005.fasta -dir /home/ibv/jdurban/MinION/RepeatMasker
+
+#sbatch -p Q-low -n 6 --mem=15G --job-name=Repeat ~/scripts/Repeat
+#qsub -N blastX18 -q Q-med -t 0-24 -l nodes=5 ~/scripts/blastx

@@ -1,0 +1,17 @@
+#!/bin/sh 
+#SBATCH --job-name="blastDendro"
+#SBATCH --mem=40G
+cp /home/ibv/jdurban/Dendroaspis/resultado* $SLURMTMP
+
+cd $SLURMTMP
+### Script per llançar blastx usant SLURM_ARRAY ###
+blastp -task blastp -db /home/ibv/jdurban/db/SwissProt -evalue 0.001 -outfmt 5 -query resultado${SLURM_ARRAY_TASK_ID} -show_gis -max_target_seqs 1 -max_hsps 1 -num_threads 2 -out /home/ibv/jdurban/Dendroaspis/results/blastP_contigs_${SLURM_ARRAY_TASK_ID}
+
+#blastx -task blastx -db Regio.db -evalue 0.0001 -outfmt 5 -query repro_lateralis.fasta -show_gis -num_threads 2 -out /home/ibv/jdurban/Erika/results/results_lateralis_zn
+#blastx -task blastx -db Regio.db -evalue 0.0001 -outfmt 5 -query repro_bschlegelii.fasta -show_gis -num_threads 2 -out /home/ibv/jdurban/Erika/results/results_bschlegelii_zn
+
+mv * $SLURM_SUBMIT_DIR
+exit
+
+#sbatch -p Q-low -n 6 --mem=15G --array=0-24 --job-name=blastX17 ~/scripts/blastX17
+#qsub -N blastX18 -q Q-med -t 0-24 -l nodes=5 ~/scripts/blastx

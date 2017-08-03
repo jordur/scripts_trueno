@@ -1,0 +1,5 @@
+#!/bin/sh 
+### Script per llançar blastx usant PBS_ARRAY ###
+RepeatMasker -e crossmatch -pa 6 -s -species "vertebrata metazoa" -html /home/ibv/jdurban/MALPOLON/results/150807_SND405_A_L003_GZX-17/transfuse/Repeat/blastn_toxines.fasta -dir /home/ibv/jdurban/MALPOLON/results/150807_SND405_A_L003_GZX-17/transfuse/Repeat
+#sbatch -p Q-low -n 6 --mem=15G --job-name=Repeat ~/scripts/Repeat
+#qsub -N blastX18 -q Q-med -t 0-24 -l nodes=5 ~/scripts/blastx
